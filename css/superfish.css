@@ -1,0 +1,237 @@
+/*menu with jquery.horizontalNav.js*/
+.nav { position: relative;}
+
+.page-1 .nav {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 78px;
+}
+
+nav { 
+	position:relative; 
+	z-index: 11;
+	float: right;
+	margin-top: 0;
+	width: 100%;
+}
+nav { position: absolute; left: 10px; right: 10px; top: 0;}
+
+.sf-menu { }
+.sf-menu ul {position:absolute;top:-999px; display:none;/* left offset of submenus need to match (see below) */}
+.sf-menu li { padding-left: 0px; position:relative; background: none;}
+	.sf-menu a {
+		display: block;
+		text-decoration: none;
+	}
+		.sf-menu a:hover {text-decoration: none;}
+
+/*================================>> 1 Level <<========================================*/
+
+li.sfHover {position: relative;}
+
+.sf-menu > li > a {
+	position: relative;
+	display:block;
+	padding: 0px;
+	text-align: center;
+	-moz-transition: background 0.3s ease-out;
+    -o-transition: background 0.3s ease-out;
+    -webkit-transition: background 0.3s ease-out;
+    font-size: 16px;
+    line-height: 88px;
+	height: 88px;
+    color: #fff;
+    background: #ef3b2d;
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	text-shadow: 1px 1px #b62d22;
+}
+.sf-menu > li {
+	display: block;
+	float: left;
+	position: relative;
+	width: 156px;
+}
+.sf-menu > li:after {
+	position: absolute;
+	content: "";
+	background: url(../images/bord-1.png) 0 0 repeat-y;
+	left: -1px;
+	top: 2px;
+	bottom: 2px;
+	width: 2px;
+}
+
+.sf-menu > li:first-child:after { display: none;}
+	.sf-menu > li.current > a,
+	.sf-menu > li:hover > a,
+	.sf-menu > li.sfHover > a {	color: #797979; text-shadow: 1px 1px #3a3a3a;}
+
+	.sf-menu > li:hover > a, 
+	.sf-menu > li.current > a, 
+	.sf-menu > li.sfHover > a,
+	.sf-menu > li:hover > span, 
+	.sf-menu > li.current > span, 
+	.sf-menu > li.sfHover > span {
+		text-decoration: none;
+		background: #4c4c4c;
+		color: #fff;
+	}
+
+.sf-menu li span {
+	position: absolute;
+	right: 50%;
+	top: 38px;
+	width: 0;
+	height: 0;
+	margin-right: -4px;
+	border: 5px solid;
+	border-color: #fff transparent transparent transparent;
+}
+.sf-menu > li a:hover > span,
+.sf-menu > li.current > a span,
+.sf-menu > li.sfHover > a span {border-color: #797979 transparent transparent transparent;}
+
+.sf-menu > li > a.sf-with-ul:after {
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 4px;
+	background: url(../images/arrow-1.png) 0 0 no-repeat;
+	bottom: 27px;
+	left: 50%;
+}
+
+/*================================>> 2 Level <<========================================*/
+
+.sf-menu > li > ul, 
+.sf-menu > li.sfHover > ul {
+	top: 88px;
+	left: 0px;
+	width: 158px;
+	z-index:99;
+	text-align: left;
+	padding: 19px 0px 21px 38px;
+	background: #454545;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.sf-menu > li > ul > li {
+	display: block; 
+	height: auto; 
+	margin: 0; 
+	position: relative; 
+}
+.sf-menu > li > ul > li.sfHover { background: none;}
+
+.sf-menu > li > ul > li > a {
+	display: inline-block;
+	border: none;
+	color: #8e8e8e;
+	font-size: 12px;
+	line-height: 34px;
+	-moz-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
+	text-transform: uppercase;
+}
+.sf-menu li li a:hover, 
+.sf-menu li.sfHover li.sfHover>a,
+.sf-menu li li:hover span,
+.sf-menu li.sfHover li.sfHover span { 
+	text-decoration: none;
+	color: #fff;
+}
+.sf-menu li li:hover, 
+.sf-menu li.sfHover li.sfHover { }
+
+.sf-menu > li.sfHover > span {
+	color: #a2a2a2;
+}
+
+.sf-menu > li > ul > li > a.sf-with-ul:after {
+	position: absolute;
+	content: "";
+	width: 5px;
+	height: 4px;
+	background: url(../images/arrow-1.png) 0 0 no-repeat;
+	bottom: 17px;
+	right: 10px;
+}
+
+/*================================>> 3 Level <<========================================*/
+
+.sf-menu li li ul {
+	z-index:99;
+	position: absolute;
+	margin-top: 0;
+	text-align: left;
+	left: 120px;
+	top: 0;
+	width: 103px;
+	background: #ef3b2d;
+	padding-top: 3px;
+	padding-bottom: 1px;
+}
+
+.sf-menu li li li {padding-left: 26px; margin-top: 1px;}
+.sf-menu li li li a {
+	display: inline-block;
+	text-decoration: none;
+	color: #151515;
+	font-size: 12px;
+	line-height: 34px;
+	-moz-transition: color 0.3s ease-out;
+    -o-transition: color 0.3s ease-out;
+    -webkit-transition: color 0.3s ease-out;
+	color: #000000;
+	text-transform: uppercase;
+}
+.sf-menu li li li a.last { background: none;}
+.sf-menu li li li:hover {}
+.sf-menu li li li a:hover {	color: #fff;}
+.sf-menu > li > ul .sf-sub-indicator {color: #a1a1a1; line-height: 15px;}
+.sf-menu > li > li.sfHover > span {	color: #a1a1a1;}
+
+/*==================================RESPONSIVE LAYOUTS===============================================*/
+
+@media only screen and (max-width: 995px) {
+	.sf-menu > li { width: 124px;}
+	.page-1 .nav { bottom: 14px;}
+	.nav { bottom: 0px;}
+}
+
+@media only screen and (max-width: 767px) {
+	.sf-menu { display:none !important;}
+	.page-1 .nav { bottom: -19px;}
+	.nav { bottom: 0px;}
+	nav { float: none; margin-left: 0; margin-bottom: 0; margin-top: 0px;}
+
+	nav select {
+		height: 35px;
+		border: 1px solid #ef3b2d;
+		font-family: Trebuchet MS, sans-serif; 
+		font-size: 14px;
+		line-height: 20px;
+		color: #fff;
+		background-color: #ef3b2d;
+		width:420px;
+		width: 100%;
+	    outline: none;
+	    padding: 5px;
+		font-weight: normal;
+	}
+
+	nav select option:first-child {
+		color:#ffffff;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+
+}
